@@ -1,0 +1,30 @@
+Info:
+API Gateway provides us numerous features which our ALB can’t:
+Authentication & authorization.
+Throttling.
+Caching responses.
+API lifecycle management: dev, QA, prod.
+SDK generation.
+API operations monitoring: API calls, latency & error rates.
+CloudWatch alarms for abnormal API behaviors.
+API keys for 3rd-party devs.
+
+Note: API Getway works only with Network Load Balancing, not Application Load Balancing.
+For Elastic Load Balancer service, there are 3 types of load balancers, Application Load Balancer (ALB), Clasic Load Balancer and Network Load Balancer (NLB).
+ECS is using ALB by default if you are following the ECS wizard.
+Now the problem comes if I use ALB. API Gateway cannot be associated with an IP address or a security group, which means it is not able to associate API Gateway with an inbound rule. 
+AWS API Gateway has an static IP range in each region. But it is still to open. So ALB can not filter request by inbound rule. In addition, API Gateway's VPC link only supports NLB,
+which means API Gateway cannot specify ALB as forwarded target.
+Ref: https://www.linkedin.com/pulse/using-amazon-api-gateway-microservices-deployed-ecs-hui-zhou/
+
+Link:
+https://www.systems-plus.com/using-amazon-api-gateway-to-route-requests-to-restful-microservices-in-amazon-ecs/
+https://www.systems-plus.com/accessing-private-vpc-resources-via-aws-api-gateway/
+
+Create API Getway: 
+https://www.powerupcloud.com/api-gateway-part-1-aws-api-gateway-monitoring-and-authentication/
+https://www.powerupcloud.com/api-gateway-aws-api-gateway-with-private-integration-part-2/
+
+
+
+

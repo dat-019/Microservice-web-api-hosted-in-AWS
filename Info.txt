@@ -1,0 +1,58 @@
+1. How to run Bash on Ubuntu on Windows 10:
+https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
+https://www.thewindowsclub.com/run-bash-on-windows-10
+
+https://docs.microsoft.com/en-us/windows/wsl/about
+
+Once completed install, enter new UNIX username: 
+username: tngo25
+pwd: Susaigon!@#
+
+To open Bash on Windows 10, run windows command line as administrator -> type "bash"
+
+Some normal command in used:
+Go to E:\Working\Research\ASPNETCore\MyWebApi-AWS\scripts -> cd /mnt/e/working/research/aspnetcore/mywebapi-aws/scripts
+
+E:\Working\Research\ASPNETCore\webapi-aws-app\webapi-aws\scripts -> cd /mnt/e/working/research/aspnetcore/webapi-aws-app/webapi-aws/scripts
+E:\Working\Research\ASPNETCore\webapi-aws-app\webapi-aws\webapi-aws1\Build -> cd /mnt/e/working/research/aspnetcore/webapi-aws-app/webapi-aws/webapi-aws1/build
+E:\Working\Research\ASPNETCore\webapi-aws-app\webapi-aws\scripts\Build-webapi-aws1 -> cd /mnt/e/Working/Research/ASPNETCore/webapi-aws-app/webapi-aws/scripts/Build-webapi-aws1
+
+Run bash command line as root: sudo -i
+
+
+2. Install AWS Command Line Interface (AWS CLI) version 2 on Linux:
+https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
+
+3. Install the Linux Bash shell on Windowds 10 (Windows Subsytem Linux)
+https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
+
+4. Install Docker in Windows Subsystem Linux:
+https://medium.com/faun/docker-running-seamlessly-in-windows-subsystem-linux-6ef8412377aa
+Note: 
+Docker has been already running on Windows system, to enable docker can be used from Windows subsystem Linux, on the Bash shell command line of Windows subsystem Linux, do as following:
+-Running docker against an engine on a different machine is actually quite easy, as Docker can expose a TCP endpoint which the CLI can attach to.
+
+a. This TCP endpoint is turned off by default; to activate it, right-click the Docker icon in your Windows taskbar and choose Settings, and tick the box next to "Expose daemon on tcp://localhost:2375 without TLS".
+b. With that done, all we need to do is instruct the CLI under Bash to connect to the engine running under Windows instead of to the non-existing engine running under Bash, like this:
+
+$ docker -H tcp://localhost:2375 images
+There are two ways to make this permanent – either add an alias for the above command or export an environment variable which instructs Docker where to find the host engine:
+$ echo "export DOCKER_HOST='tcp://localhost:2375'" >> ~/.bashrc
+$ source ~/.bashrc
+
+Ref (see the answer from ramicon): https://forums.docker.com/t/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker-daemon-running/43371/3
+
+----------------------------------------
+
+Working with ECS:
+- Create new cluster (configured for automatically or just empty cluster)
+- Attached an IC2 instance into cluster (if needed)
+- The Amazon ECS container agent allows container instances to connect to your cluster. The Amazon ECS container agent is included in the Amazon ECS-optimized AMIs, but you can also install it on any Amazon EC2 instance that supports the Amazon ECS specification. The Amazon ECS container agent is only supported on Amazon EC2 instances.
+
+
+To see log per container in EC2:
+docker ps -a
+copy the exited container id
+$docker logs container id
+
+

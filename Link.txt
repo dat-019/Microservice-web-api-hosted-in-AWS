@@ -1,0 +1,15 @@
+
+AWS Toolkit for Visual Studio 2017 and 2019
+https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.AWSToolkitforVisualStudio2017
+
+Identity and Access Management (IAM): https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html
+
+Use IAM page to manage the credentials for your AWS account. To manage credentials for AWS Identity and Access Management (IAM) users, use the IAM Console .
+Step: To manage the credentials for your AWS account
+1. Login to the AWS console with your root account (user name and pwd)
+2. Login into IAM page via "My Security Credentials" item at the drop down list from your account at the top right conner of the page.
+3. Create new access key
+
+Connect to Linux instance:
+Using putty: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html
+
