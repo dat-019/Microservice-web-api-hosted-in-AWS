@@ -6,7 +6,7 @@ Regarding web api development strategy, there are many approaches in term of tec
 1. Install the Linux Bash shell on Windowds 10 (Windows Subsytem Linux). This [article](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) shows how to install with step by step.
 1. Install AWS Command Line Interface (AWS CLI) version 2 on Linux, as following [article](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html).
 1. Install Docker in Windows Subsystem Linux, as following [article](https://medium.com/faun/docker-running-seamlessly-in-windows-subsystem-linux-6ef8412377aa).
-   Note: This step can be optional if you already have installed Docker for Desktop.
+   <b>Note</b>: This step can be optional if you already have installed Docker for Desktop.
    If Docker has been already running on Windows system, to enable docker can be used from Windows subsystem Linux, on the Bash shell command line of Windows subsystem Linux, do as following:
     - Docker can expose a TCP endpoint which the CLI can attach to.
          - This TCP endpoint is turned off by default; to activate it, right-click the Docker icon in your Windows taskbar and choose Settings, and tick the box next to "Expose daemon on tcp://localhost:2375 without TLS".
