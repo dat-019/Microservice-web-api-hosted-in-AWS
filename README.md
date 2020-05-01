@@ -1,5 +1,5 @@
 ## Development Environment - Prerequisites
-Regarding web api development strategy, there are many approaches in term of technology that could be used to develop, such as ASP.NET Core or NoteJS ect. This article we choose ASP.NET Core Web API as it is part of MS technology stack.
+Regarding web api development strategy, there are many approaches in term of technology that could be used to develop, such as ASP.NET Core or NoteJS, etc. This article we choose ASP.NET Core Web API as it is part of MS technology stack.
 1. MS Visual Studio. At the time of this demo Im using MS Visual Studio 2017.
 1. As we are working on AWS, [AWS Toolkit for Visual Studio 2017 and 2019](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.AWSToolkitforVisualStudio2017) is an essential tool to help us with some pre-defined templates to create a new project for Lambda AWS function (web api with .net core). This also supports to publish the function from local into AWS directly via VS.
 1. As we are working on microservices and related disciplines, Docker is one of the most powerfully platform supporting this at the moment. We need to install [Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/) on your Windows local.
@@ -19,3 +19,6 @@ Regarding web api development strategy, there are many approaches in term of tec
          $ echo "export DOCKER_HOST='tcp://localhost:2375'" >> ~/.bashrc
          $ source ~/.bashrc
          ```    
+1. To be able to connect to EC2 Linux environment from your local Windows, we can use Putty. This [link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html) show you how to do this.
+
+## Microservice (Web API) hosted in AWS
