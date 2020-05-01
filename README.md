@@ -9,14 +9,13 @@ Regarding web api development strategy, there are many approaches in term of tec
    Note: This step can be optional if you already have installed Docker for Desktop.
    If Docker has been already running on Windows system, to enable docker can be used from Windows subsystem Linux, on the Bash shell command line of Windows subsystem Linux, do as following:
     - Docker can expose a TCP endpoint which the CLI can attach to.
-    a. This TCP endpoint is turned off by default; to activate it, right-click the Docker icon in your Windows taskbar and choose Settings, and tick the box next to "Expose daemon on tcp://localhost:2375 without TLS".
-    b. With that done, all we need to do is instruct the CLI under Bash to connect to the engine running under Windows instead of to the non-existing engine running under Bash, like this:
-    ```Shell
-    $ docker -H tcp://localhost:2375 images
-    ```
-    There are two ways to make this permanent � either add an alias for the above command or export an environment variable which instructs Docker where to find the host engine:
-    ```Shell
-    $ echo "export DOCKER_HOST='tcp://localhost:2375'" >> ~/.bashrc
-    $ source ~/.bashrc
-    ```
-    
+         - This TCP endpoint is turned off by default; to activate it, right-click the Docker icon in your Windows taskbar and choose Settings, and tick the box next to "Expose daemon on tcp://localhost:2375 without TLS".
+         - With that done, all we need to do is instruct the CLI under Bash to connect to the engine running under Windows instead of to the non-existing engine running under Bash, like this:
+         ```Shell
+         $ docker -H tcp://localhost:2375 images
+         ```
+         - There are two ways to make this permanent � either add an alias for the above command or export an environment variable which instructs Docker where to find the host engine:
+         ```Shell
+         $ echo "export DOCKER_HOST='tcp://localhost:2375'" >> ~/.bashrc
+         $ source ~/.bashrc
+         ```    
