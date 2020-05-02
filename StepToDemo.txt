@@ -7,12 +7,12 @@
    e. Deploy task defination into ECS
    f. Deploy built docker images into ECS Repository
    g. Create Elastic Load Balancing
-   h. Create EC2 instances (two) with 'ecs-optimized' behavior. At the new step, eddit User-Data attribute of the instance to include it into our cluster.
+   h. Create EC2 instances (two) with 'ecs-optimized' behavior. With 'ecs-optimized', the container agent is automatically deployed in the instance. At the new step, edit User-Data attribute of the instance to include it into our cluster.
    i. Create new service with 2 tasks, with above created task defination and load balancing (type is Network Load Balancing). 
       The tasks will be created automatically and pull docker images from ECS repository into EC2 instacnes to create coresponding docker containers.
    j. Check existing the ECS Load balancing, a new target group was auto created with existing listener port (80). There are 2 targets inside the target group.
    k. Manually: 
-      	Inside the load balaning, create new listener with port 81.
+      	Inside the load balaning, create new listener with port 1025.
 	Create new target group, add 2 remaining running docker containers as 2 targets in this target group. Note: make sure the listening ports are correct.
 	Associate the listener with the target group
    l. Create new API Getway
