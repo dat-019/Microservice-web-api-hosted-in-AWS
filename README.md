@@ -88,3 +88,4 @@ Popular approaches are:
    1. Create new VPCLink as the bridge between the Getway API and the Load Balancing
    1. Create API Getway resources
    1. For the client to call your API Getway, you must create a deployment and associate a state with it.
+   1. Testing methods.
