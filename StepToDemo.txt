@@ -1,4 +1,5 @@
-1. ECS components:
+1. Lambda AWS function.
+2. ECS components:
    a. Create your custom cluster in ECS
    b. Create api project(s) (using ASP.NET CORE WebApi project type) with Dockerfile to build and package an api project into docker image and stored in local docker repository.
    c. Create task defination (define docker container(s) with storage capacity / cpu usage from built image(s) in (b) above).

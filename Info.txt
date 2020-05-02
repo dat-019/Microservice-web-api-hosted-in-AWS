@@ -26,17 +26,17 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
 3. Install the Linux Bash shell on Windowds 10 (Windows Subsytem Linux)
 https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
 
-4. Install Docker in Windows Subsystem Linux:
+4. Install Docker in Windows Subsystem Linux (optional if you already have installed Docker for Desktop):
 https://medium.com/faun/docker-running-seamlessly-in-windows-subsystem-linux-6ef8412377aa
 Note: 
-Docker has been already running on Windows system, to enable docker can be used from Windows subsystem Linux, on the Bash shell command line of Windows subsystem Linux, do as following:
+If Docker has been already running on Windows system, to enable docker can be used from Windows subsystem Linux, on the Bash shell command line of Windows subsystem Linux, do as following:
 -Running docker against an engine on a different machine is actually quite easy, as Docker can expose a TCP endpoint which the CLI can attach to.
 
 a. This TCP endpoint is turned off by default; to activate it, right-click the Docker icon in your Windows taskbar and choose Settings, and tick the box next to "Expose daemon on tcp://localhost:2375 without TLS".
 b. With that done, all we need to do is instruct the CLI under Bash to connect to the engine running under Windows instead of to the non-existing engine running under Bash, like this:
 
 $ docker -H tcp://localhost:2375 images
-There are two ways to make this permanent – either add an alias for the above command or export an environment variable which instructs Docker where to find the host engine:
+There are two ways to make this permanent ï¿½ either add an alias for the above command or export an environment variable which instructs Docker where to find the host engine:
 $ echo "export DOCKER_HOST='tcp://localhost:2375'" >> ~/.bashrc
 $ source ~/.bashrc
 
