@@ -43,5 +43,7 @@ Popular approaches are:
       - Pay for requested compute resources when used.
 ## Demo - Application Architecture
 1. High level
+
 ![A screenshot of the High level Application Architecture ](/images/APIGetway-ECS.png)
+
 1. We will deploy a simple microservice (web API) to AWS ECS using EC2
