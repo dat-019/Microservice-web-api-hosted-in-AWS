@@ -48,7 +48,7 @@ Popular approaches are:
 
 1. We will deploy a simple microservice (web API) to AWS ECS using EC2
 
-![A screenshot of the High level Application Architecture ](/images/APIGetway-ECS.png)
+![A screenshot of the High level Application Architecture ](/images/Demo-AppInfrastructure.png)
 
 - Elastic Load Banlancing service
    - 3 types: Application Load Balancing (ALB), Network Load Balancing (NLB) and Classic Load Balancing.
@@ -83,4 +83,4 @@ Popular approaches are:
    1. Create new API Getway
    1. Create new VPCLink as the bridge between the Getway API and the Load Balancing
    1. Create API Getway resources
-   1. For the client to call your API Getway, you must create a deployment and associated a state with it.
+   1. For the client to call your API Getway, you must create a deployment and associate a state with it.
