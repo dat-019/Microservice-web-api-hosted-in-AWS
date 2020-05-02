@@ -32,7 +32,7 @@ Popular approaches are:
 - AWS Elastic Container Service (ECS), including EC2 instances and Fargate, is a logical grouping (cluster) of virtual machines/instances and related storage, memory, cpu management.
    - ECS EC2:
       - Remote (virutal) machines.
-      - Comunicate with ECS via container agent running on each of the instances
+      - Comunicate with ECS via **container agent** running on each of the instances.
       - Docker container-based deployment.
       - Deploy and manage both applications and infrastructure.
       - Pay for EC2 instances.
@@ -47,3 +47,40 @@ Popular approaches are:
 ![A screenshot of the High level Application Architecture ](/images/APIGetway-ECS.png)
 
 1. We will deploy a simple microservice (web API) to AWS ECS using EC2
+
+![A screenshot of the High level Application Architecture ](/images/APIGetway-ECS.png)
+
+- Elastic Load Banlancing service
+   - 3 types: Application Load Balancing (ALB), Network Load Balancing (NLB) and Classic Load Balancing.
+   - ALB is used by default if you are following the ECS wizard.
+- AWS Getway
+   - Authentication & authorization.
+   - Throttling.
+   - Caching responses.
+   - API lifecycle management: dev, QA, prod.
+   - SDK generation.
+   - API operations monitoring: API calls, latency & error rates.
+   - CloudWatch alarms for abnormal API behaviors.
+   - API keys for 3rd-party devs.
+   - Work only with Network Load Balancing, not Application Load Balancing.
+
+1. Steps to work through
+   1. Create your custom cluster in ECS
+   1. Create api project(s) (using ASP.NET CORE WebApi project type) with Dockerfile to build and package an api project into docker image and stored in local docker repository.
+   1. Create task defination (define docker container(s) with storage capacity / cpu usage from built image(s) in (b) above).
+   1. Create build and deploy scripts (using AWS CLI with Bash)
+   1. Deploy task defination into ECS
+   1. Deploy built docker images into ECS Repository
+   1. Create Elastic Load Balancing
+   1. Create EC2 instances (two) with 'ecs-optimized' behavior. With 'ecs-optimized', the container agent is automatically deployed in the instance. At the new step, edit User-Data attribute of the instance to include it into our cluster.
+   1. Create new service with 2 tasks, with above created task defination and load balancing (type is Network Load Balancing). 
+      The tasks will be created automatically and pull docker images from ECS repository into EC2 instacnes to create coresponding docker containers.
+   1. Check existing the ECS Load balancing, a new target group was auto created with existing listener port (80). There are 2 targets inside the target group.
+   1. Manually: 
+      - Inside the load balaning, create new listener with port 1025.
+      - Create new target group, add 2 remaining running docker containers as 2 targets in this target group. Note: make sure the listening ports are correct.
+	   - Associate the listener with the target group
+   1. Create new API Getway
+   1. Create new VPCLink as the bridge between the Getway API and the Load Balancing
+   1. Create API Getway resources
+   1. For the client to call your API Getway, you must create a deployment and associated a state with it.
