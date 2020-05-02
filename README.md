@@ -1,4 +1,4 @@
-## Development Environment - Prerequisites
+## Development Environment
 Regarding web api development strategy, there are many approaches in term of technology that could be used to develop, such as ASP.NET Core or NoteJS, etc. This article we choose ASP.NET Core Web API as it is part of MS technology stack.
 1. MS Visual Studio. At the time of this demo Im using MS Visual Studio 2017.
 1. As we are working on AWS, [AWS Toolkit for Visual Studio 2017 and 2019](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.AWSToolkitforVisualStudio2017) is an essential tool to help us with some pre-defined templates to create a new project for Lambda AWS function (web api with .net core). This also supports to publish the function from local into AWS directly via VS.
@@ -46,14 +46,14 @@ Popular approaches are:
 
 ![A screenshot of the High level Application Architecture ](/images/APIGetway-ECS.png)
 
-1. We will deploy a simple microservice (web API) to AWS ECS using EC2
+1. Applicate Architecture - Deploy a simple microservice (Web APIs) to AWS ECS using EC2.
 
 ![A screenshot of the High level Application Architecture ](/images/Demo-AppInfrastructure.png)
 
 - Elastic Load Banlancing service
    - 3 types: Application Load Balancing (ALB), Network Load Balancing (NLB) and Classic Load Balancing.
    - ALB is used by default if you are following the ECS wizard.
-- AWS Getway
+- AWS API Getway
    - Authentication & authorization.
    - Throttling.
    - Caching responses.
@@ -72,7 +72,11 @@ Popular approaches are:
    1. Deploy task defination into ECS
    1. Deploy built docker images into ECS Repository
    1. Create Elastic Load Balancing
-   1. Create EC2 instances (two) with 'ecs-optimized' behavior. With 'ecs-optimized', the container agent is automatically deployed in the instance. At the new step, edit User-Data attribute of the instance to include it into our cluster.
+   1. Create EC2 instances (two) with 'ecs-optimized' behavior. With 'ecs-optimized', the container agent is automatically deployed in the instance. To launch your container instance into a non-default cluster, choose the **Advanced Details** list. Then, paste the following script into the **User data** field, replacing your_cluster_name with the name of your cluster. Note that Amazon EC2 user data scripts are executed only one time, when the instance is first launched.
+      ```Shell
+         #!/bin/bash
+         echo ECS_CLUSTER=your_cluster_name >> /etc/ecs/ecs.config
+      ```
    1. Create new service with 2 tasks, with above created task defination and load balancing (type is Network Load Balancing). 
       The tasks will be created automatically and pull docker images from ECS repository into EC2 instacnes to create coresponding docker containers.
    1. Check existing the ECS Load balancing, a new target group was auto created with existing listener port (80). There are 2 targets inside the target group.
