@@ -69,7 +69,7 @@ Popular approaches are:
 ### Steps to work through
    1. Create your custom cluster in ECS
    1. Create api project(s) (using ASP.NET CORE WebApi project type) with Dockerfile to build and package an api project into docker image and stored in local docker repository.
-   1. Create task defination (define docker container(s) with storage capacity / cpu usage from built image(s) in (b) above).
+   1. Create task defination (define docker container(s) with storage capacity / cpu usage from built image(s) in (2) above).
    1. Create build and deploy scripts (using AWS CLI with Bash)
    1. Deploy task defination into ECS
    1. Deploy built docker images into ECS Repository
