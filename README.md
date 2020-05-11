@@ -73,7 +73,7 @@ Popular approaches are:
    1. Create build and deploy scripts (using AWS CLI with Bash)
    1. Deploy task defination into ECS
    1. Deploy built docker images into ECS Repository
-   1. Create Elastic Load Balancing
+   1. Create Elastic Load Balancer
    1. Create EC2 instances (two) with 'ecs-optimized' behavior. With 'ecs-optimized', the container agent is automatically deployed in the instance. To launch your container instance into a non-default cluster, choose the **Advanced Details** list. Then, paste the following script into the **User data** field, replacing your_cluster_name with the name of your cluster. Note that Amazon EC2 user data scripts are executed only one time, when the instance is first launched.
       ```Shell
          #!/bin/bash
