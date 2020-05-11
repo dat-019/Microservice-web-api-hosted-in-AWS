@@ -1,0 +1,58 @@
+{
+  "family": "testing-webapi-task",
+  "networkMode": "bridge",
+  "taskRoleArn": "ecsTaskExecutionRole",
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "containerDefinitions": [
+    {
+      "image": "321489712852.dkr.ecr.us-east-2.amazonaws.com/testing-webapi1-app:latest",
+      "name": "testing-webapi1-app",
+      "cpu": 100,
+      "memory": 105,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5001,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "VIRTUAL_HOST",
+          "value": "ec2-3-22-19-129.us-east-2.compute.amazonaws.com"
+        },
+        {
+          "name": "WEBAPI_HOST",
+          "value": "testing-webapi1-app-webapi"
+        }
+      ]
+    },
+    {
+      "image": "321489712852.dkr.ecr.us-east-2.amazonaws.com/testing-webapi2-app:latest",
+      "name": "testing-webapi2-app",
+      "cpu": 105,
+      "memory": 110,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5002,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "VIRTUAL_HOST",
+          "value": "ec2-3-22-19-129.us-east-2.compute.amazonaws.com"
+        },
+        {
+          "name": "WEBAPI_HOST",
+          "value": "testing-webapi2-app-webapi"
+        }
+      ]
+    }
+  ]
+}

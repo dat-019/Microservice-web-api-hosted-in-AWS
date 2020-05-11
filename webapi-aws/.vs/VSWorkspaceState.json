@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\scripts",
+    "\\webapi-aws1\\bin\\Release",
+    "\\webapi-aws1\\Build",
+    "\\webapi-aws1\\Controllers",
+    "\\webapi-aws1\\obj\\Debug",
+    "\\webapi-aws1\\obj\\Release",
+    "\\webapi-aws1\\obj\\Release\\netcoreapp2.1",
+    "\\webapi-aws2\\Build",
+    "\\webapi-aws2\\Controllers"
+  ],
+  "PreviewInSolutionExplorer": false
+}

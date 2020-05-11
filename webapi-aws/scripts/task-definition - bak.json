@@ -1,0 +1,34 @@
+{
+  "family": "${ECS_TASK}",
+  "networkMode": "bridge",
+  "taskRoleArn": "ecsTaskExecutionRole",
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "containerDefinitions": [
+    {
+      "image": "${AWS_ECS_REPO_DOMAIN}/${IMAGE_NAME1}:${IMAGE_VERSION}",
+      "name": "${IMAGE_NAME1}",
+      "cpu": 100,
+      "memory": 105,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5001,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "VIRTUAL_HOST",
+          "value": "${AWS_VIRTUAL_HOST}"
+        },
+        {
+          "name": "WEBAPI_HOST",
+          "value": "${IMAGE_NAME1}-webapi"
+        }
+      ]
+    }
+  ]
+}
