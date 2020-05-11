@@ -79,6 +79,11 @@ Popular approaches are:
          #!/bin/bash
          echo ECS_CLUSTER=your_cluster_name >> /etc/ecs/ecs.config
       ```
+   1. Pull the [jwilder/nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy/) Docker Image from Dockers public repository which sets up a new Docker container running [nginx](https://nginx.org/en/) and [docker-gen](https://github.com/jwilder/docker-gen) which is what will enable our no-touch deployments where it will generate the reverse proxy configs for nginx each time a new Docker App is deployed.
+      ```Shell
+         #!/bin/bash
+         $ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+      ```
    1. Create new service with 2 tasks, with above created task defination and load balancing (type is Network Load Balancing). 
       The tasks will be created automatically and pull docker images from ECS repository into EC2 instacnes to create coresponding docker containers.
    1. Check existing the ECS Load balancing, a new target group was auto created with existing listener port (80). There are 2 targets inside the target group.
