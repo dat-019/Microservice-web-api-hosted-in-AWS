@@ -2,6 +2,7 @@
 Regarding web api development strategy, there are many approaches in term of technology that could be used to develop, such as ASP.NET Core or NoteJS, etc. This article we choose ASP.NET Core Web API as it is part of MS technology stack.
 1. MS Visual Studio. At the time of this demo Im using MS Visual Studio 2017.
 1. As we are working on AWS, [AWS Toolkit for Visual Studio 2017 and 2019](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.AWSToolkitforVisualStudio2017) is an essential tool to help us with some pre-defined templates to create a new project for Lambda AWS function (web api with .net core). This also supports to publish the function from local into AWS directly via VS.
+1. To use the AWS SDK for .NET with .NET Core, you can use the **AWSSDK.Extensions.NETCore.Setup** NuGet package. Ref [here](https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/net-dg-config-netcore.html).
 1. As we are working on microservices and related disciplines, Docker is one of the most powerfully platform supporting this at the moment. We need to install [Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/) in your Windows local.
 1. Install the Linux Bash shell on Windowds 10 (Windows Subsytem Linux). This [article](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) shows how to install with step by step.
 1. Install AWS Command Line Interface (AWS CLI) version 2 on Linux, as following [article](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html).
