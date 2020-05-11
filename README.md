@@ -43,11 +43,11 @@ Popular approaches are:
       - Deploy and manage applications, not infrastructure.
       - Pay for requested compute resources when used.
 ## Demo - Application Architecture
-1. High level
+### High level
 
 ![A screenshot of the High level Application Architecture ](/images/APIGetway-ECS.png)
 
-1. Applicate Architecture - Deploy a simple microservice (Web APIs) to AWS ECS using EC2.
+### Applicate Architecture - Deploy a simple microservice (Web APIs) to AWS ECS using EC2.
 
 ![A screenshot of the High level Application Architecture ](/images/Demo-AppInfrastructure.png)
 
@@ -66,7 +66,7 @@ Popular approaches are:
    - Work only with Network Load Balancing, not Application Load Balancing.
    - Reference [here](https://aws.amazon.com/blogs/architecture/using-api-gateway-as-a-single-entry-point-for-web-applications-and-api-microservices/) as the architecture for Using API Gateway as a Single Entry Point for Web Applications and API Microservices.
 
-1. Steps to work through
+### Steps to work through
    1. Create your custom cluster in ECS
    1. Create api project(s) (using ASP.NET CORE WebApi project type) with Dockerfile to build and package an api project into docker image and stored in local docker repository.
    1. Create task defination (define docker container(s) with storage capacity / cpu usage from built image(s) in (b) above).
