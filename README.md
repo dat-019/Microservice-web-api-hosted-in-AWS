@@ -63,6 +63,7 @@ Popular approaches are:
    - CloudWatch alarms for abnormal API behaviors.
    - API keys for 3rd-party devs.
    - Work only with Network Load Balancing, not Application Load Balancing.
+   - Reference [here](https://aws.amazon.com/blogs/architecture/using-api-gateway-as-a-single-entry-point-for-web-applications-and-api-microservices/) as the architecture for Using API Gateway as a Single Entry Point for Web Applications and API Microservices.
 
 1. Steps to work through
    1. Create your custom cluster in ECS
@@ -87,5 +88,5 @@ Popular approaches are:
    1. Create new API Getway
    1. Create new VPCLink as the bridge between the Getway API and the Load Balancing
    1. Create API Getway resources
-   1. For the client to call your API Getway, you must create a deployment and associate a state with it.
+   1. For the client to call your API Getway, you must create a deployment and associate a state with it. Ref [here](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api-with-console.html)
    1. Testing methods.
